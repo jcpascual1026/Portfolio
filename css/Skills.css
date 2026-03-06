@@ -1,0 +1,30 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #080b12;
+    color: white;
+}
+
+/* Placeholder section - add content styles here when ready */
+.skills-content {
+    padding: 8rem 2rem 4rem;
+    min-height: 80vh;
+}
+
+/* Responsive base */
+@media (max-width: 900px) {
+    .skills-content {
+        padding: 7rem 1.5rem 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-content {
+        padding: 6rem 1rem 2rem;
+    }
+}

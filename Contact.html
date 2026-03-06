@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+
+<link rel="stylesheet" href="css/Contact.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/footer.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  // Initialize EmailJS
+  (function(){
+      emailjs.init("34eIGd_oH76oz3SR_"); // Replace with your EmailJS User ID
+  })();
+
+  		window.addEventListener('load', function() {
+			const nav = document.querySelector('nav');
+			// Animate nav down on load
+			setTimeout(() => {
+				nav.style.transform = 'translateY(0)';
+			}, 700); // Small delay to ensure styles are applied
+		});
+
+		window.addEventListener('scroll', function() {
+			const nav = document.querySelector('nav');
+			if (window.scrollY > 0) {
+				nav.classList.add('scrolled');
+			} else {
+				nav.classList.remove('scrolled');
+			}
+		});
+</script>
+
+</head>
+<body>
+
+<nav>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="nav-menu">
+        <li class="nav-items"><a href="main.html" class="nav-menu-links">Home</a></li>
+        <li class="nav-items"><a href="About.html" class="nav-menu-links">About</a></li>
+        <li class="nav-items"><a href="Academic.html" class="nav-menu-links">Academic</a></li>
+        <li class="nav-items"><a href="Skills.html" class="nav-menu-links">Skills</a></li>
+        <li class="nav-items"><a href="Projects.html" class="nav-menu-links">Projects</a></li>
+        <li class="nav-items"><a href="Contact.html" class="nav-menu-links active">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="Container">
+    <p data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000"><i class="fa-solid fa-envelope"></i>Get In Touch</p>
+    <h1 data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000"> Contact Me</h1>
+
+    <div class="inContainer">
+        <div class="left-side" data-aos="flip-left" data-aos-delay="1500" data-aos-duration="1500">
+            <div class="form-card1">
+                <div class="form-card2">
+                    <form id="contactForm" class="form">
+                        <h1 class="form-heading" >Let's Connect</h1>
+                        <p>I'd love to hear from you</p>
+
+                        <div class="form-field">
+                            <input required placeholder="Your Name" class="input-field" type="text" name="from_name" />
+                        </div>
+
+                        <div class="form-field">
+                            <input required placeholder="Your Email" class="input-field" type="email" name="from_email"/>
+                        </div>
+
+                        <div class="form-field">
+                            <input required placeholder="Subject" class="input-field" type="text" name="subject"/>
+                        </div>
+
+                        <div class="form-field">
+                            <textarea required placeholder="Your Message (Max 200 characters)" cols="30" rows="3" class="input-field" name="message"></textarea>
+                        </div>
+
+                        <button type="submit" class="sendMessage-btn">Send Message <i class="fa-regular fa-paper-plane"></i></button>
+                        <p class="note" id="formMessage">Your information is safe and will never be shared with third parties.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="card" data-aos="flip-right" data-aos-delay="2000" data-aos-duration="1500">
+                <i class="fa-solid fa-envelope" style="background-color: cyan;"></i>
+                <h3>Email Me</h3>
+                <p>pascualjc47@gmail.com</p>
+            </div>
+
+            <div class="card" data-aos="flip-left" data-aos-delay="2500" data-aos-duration="1500">
+                <i class="fa-solid fa-location-dot" style="background-color: purple;"></i>
+                <h3>Live In</h3>
+                <p>San Pablo City, Laguna, Philippines</p>
+            </div>
+
+            <div class="card2" data-aos="flip-right" data-aos-delay="1500" data-aos-duration="1500">
+                <h3>Follow Me</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+        <div class="top-footer">
+            <div class="first-part">
+                <h1>Let's Build Something Amazing</h1>
+                <a href="Contact.html" class="contact-link">
+                    <button>Get In Touch <i class="fa-solid fa-arrow-right"></i></button>
+                </a>
+            </div>
+            <div class="footer-nav">
+                <h3>Quick Links</h3>
+                <div>
+                    <a href="main.html">Home</a>
+                    <a href="About.html">About</a>
+                    <a href="Academic.html">Academic</a>
+                    <a href="Skills.html">Skills</a>
+                    <a href="Projects.html">Projects</a>
+                    <a href="Contact.html" target="_blank" class="contact-link">Contact</a>
+                </div>
+            </div>
+            <div class="footer-Contact-info">
+                <h3>Contact Info</h3>
+                <div>
+                    <a href="mailto:johnchrispascual@gmail.com"><p><i class="fa-brands fa-google"></i> Gmail</p></a>
+                    <a href="https://ph.linkedin.com/in/john-christopher-pascual-001b6032a" target="_blank"><p><i class="fa-brands fa-linkedin"></i> LinkedIn</p></a>
+                    <a href="https://github.com/JohnChristopherPascual" target="_blank"><p><i class="fa-brands fa-github"></i> GitHub</p></a>
+                    <a href="https://www.instagram.com/zerozumi26/" target="_blank"><p><i class="fa-brands fa-instagram"></i> Instagram</p></a>
+                    <a href="https://web.facebook.com/jcPascual1026" target="_blank"><p><i class="fa-brands fa-facebook"></i> Facebook</p></a>
+                </div>
+            </div>
+            <div>
+                <h4>Stay Updated</h4>
+                <p>Get Notified of the Latest Updates</p>
+                <div class="subscribe">
+                    <input type="email" placeholder="Enter your email">
+                    <button><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <p>&copy; 2026 John Christopher Pascual. All rights reserved.</p>
+        </div>
+    </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init();
+
+    // EmailJS form submission
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    contactForm.addEventListener('submit', function(event){
+        event.preventDefault(); // prevent page reload
+
+        // Disable button while sending
+        const submitBtn = contactForm.querySelector('button');
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Sending...';
+
+        emailjs.sendForm('service_z4j3lmz', 'template_p513a5n', this)
+            .then(function(){
+                formMessage.style.color = 'lime';
+                formMessage.innerText = 'Message sent successfully!';
+                contactForm.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message <i class="fa-regular fa-paper-plane"></i>';
+            }, function(error){
+                formMessage.style.color = 'red';
+                formMessage.innerText = 'Failed to send message. Please try again.';
+                console.error('EmailJS error:', error);
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message <i class="fa-regular fa-paper-plane"></i>';
+            });
+    });
+
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-menu-links');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-overlay');
+    });
+
+    // Close menu when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-overlay');
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+nav{
+    width: 100%;
+    height: 6vh;
+    justify-self: center;
+    text-align: center;
+    padding: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    transition: transform 1.5s ease, box-shadow 0.3s ease;
+    transform: translateY(0);
+}
+
+.nav-menu{
+    list-style: none;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-items{
+    padding: 1rem;
+}
+
+.nav-menu-links{
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    position: relative;
+}
+
+.nav-menu-links::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: cyan;
+    transition: width 0.3s ease;
+}
+
+/* hover underline */
+.nav-menu-links:hover::after{
+    width: 100%;
+}
+
+/* active link (Home) always underlined */
+.nav-menu-links.active::after{
+    width: 100%;
+}
+
+nav.scrolled {
+    background-color: #080b12;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Hamburger Menu Button (hidden on desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 101;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* RESPONSIVE NAV - TABLET */
+@media (max-width: 900px) {
+    .nav-menu {
+        width: 80%;
+    }
+    
+    .nav-items {
+        padding: 0.8rem;
+    }
+    
+    .nav-menu-links {
+        font-size: 0.85rem;
+    }
+}
+
+/* RESPONSIVE NAV - MOBILE */
+@media (max-width: 600px) {
+    /* Hide regular nav menu initially */
+    .nav-menu {
+        display: none;
+    }
+
+    nav {
+        height: auto;
+        min-height: 6vh;
+        padding: 0;
+    }
+
+    /* Center the hamburger vertically */
+    .hamburger {
+        display: flex;
+        position: fixed;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        z-index: 101;
+    }
+
+    /* Full screen blur overlay when menu is active */
+    body.menu-overlay::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(8, 11, 18, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 99;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Show menu when active - sliding from top */
+    .nav-menu.active {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 50vh;
+        background: linear-gradient(135deg, #0b1220 0%, #111827 100%);
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        animation: slideDown 0.4s ease;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+        z-index: 100;
+        border-radius: 0 0 20px 20px;
+    }
+
+    @keyframes slideDown {
+        from {
+            top: -50vh;
+            opacity: 0;
+        }
+        to {
+            top: 0;
+            opacity: 1;
+        }
+    }
+
+    .nav-items {
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    .nav-menu-links {
+        font-size: 1.2rem;
+        display: inline-block;
+    }
+
+    nav.scrolled .hamburger span {
+        background-color: white;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+    .hamburger {
+        right: 15px;
+    }
+
+    .hamburger span {
+        width: 22px;
+    }
+
+    .nav-menu {
+        width: 80%;
+    }
+}

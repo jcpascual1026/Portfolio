@@ -1,0 +1,334 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #080b12;
+    color: white;
+}
+
+.Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10vh 5vw;          /* consistent vertical and horizontal margin */
+    gap: 2vh;                   /* spacing between children */
+}
+
+.Container p{
+    font-size: 0.6rem;
+    color: cyan;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.Container h1{
+    font-size: 3.3rem;
+    margin-bottom: 1vh;
+}
+
+/* FORM */
+.form{
+    padding: 4vh 5vw;           /* consistent padding */
+    background-color: #0c0f15;
+    border-radius: 1rem;
+    text-align: left;
+    width: 100%;
+    max-width: 60rem;           /* responsive max width */
+    margin: 3vh 0;              /* space above/below */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;                   /* consistent spacing between form elements */
+}
+
+.form h1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.form p{
+    font-size: 0.6rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* FORM FIELDS */
+.form-field{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;                   /* spacing between input/textarea */
+}
+
+.form-field input,
+.form-field textarea{
+    width: 100%;
+    padding: 1vh 1rem;          /* responsive padding */
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #1a1d23;
+    color: white;
+    text-align: left;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.form-field textarea{
+    min-height: 20vh;           /* make textarea taller */
+    resize: vertical;
+}
+
+/* BUTTON */
+.form button{
+    padding: 1vh 1.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #0c0f15;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.form button:hover{
+    background-color: #1a1d23;
+    color: cyan;
+}
+
+.form .note{
+    color: #888;
+    font-size: 0.5rem;
+    text-align: center;
+}
+
+.inContainer{
+    display: flex;     /* spacing between form and card */
+    gap: 5vw;          /* consistent horizontal gap */
+    flex-wrap: wrap;   /* allow wrapping on smaller screens */
+}
+
+.card{
+    padding: 1.5rem 1.3rem;
+    border-radius: 14px;
+    text-align: left;
+    margin: 2rem 0;
+
+    /* dark card background */
+    background: linear-gradient(145deg,#111827,#0b1220);
+
+    /* subtle border */
+    border: 1px solid rgba(255,255,255,0.06);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+/* ICON BOX */
+.card i{
+    font-size: 1.3rem;
+    padding: 0.7rem;
+    border-radius: 10px;
+    margin-bottom: 0.9rem;
+    display: inline-block;
+    background: rgba(255,255,255,0.05);
+}
+
+/* CYAN ICON */
+.card:nth-child(2n) i{
+    color: #00fff7;
+}
+
+/* PURPLE ICON */
+.card:nth-child(2n+1) i{
+    color: #8b2be2;
+}
+
+/* CYAN HOVER BORDER */
+.card:nth-child(2n):hover{
+    border: 1px solid #00fff7;
+    box-shadow: 0 10px 25px rgba(0,255,247,0.15);
+}
+
+/* PURPLE HOVER BORDER */
+.card:nth-child(2n+1):hover{
+    border: 1px solid #8b2be2;
+    box-shadow: 0 10px 25px rgba(139,43,226,0.15);
+}
+
+/* CARD HOVER ANIMATION */
+.card:hover{
+    transform: translateY(-7px) scale(1.02);
+}
+
+/* TEXT */
+.card h3{
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.card p{
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.card2{
+    background: linear-gradient(145deg,#1f2937,#1a2233);
+    padding: 1vh 0 2rem 2rem;
+    border-radius: 1rem;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.card2 h3{
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.social-links{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a{
+    width: 2.7rem;
+    height: 2.7rem;
+    background: #2b3445;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #d1d5db;
+    font-size: 1.7rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover{
+    background: #3b82f6;
+    color: white;
+    transform: translateY(-4px);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px){
+    .Container{
+        margin: 8vh 3vw;
+    }
+
+    .Container h1{
+        font-size: 2.5rem;
+    }
+
+    .form{
+        padding: 3vh 4vw;
+    }
+
+    .inContainer{
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .right-side{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .right-side .card,
+    .right-side .card2{
+        flex: 1 1 250px;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 600px){
+    .Container{
+        margin: 6vh 4vw;
+    }
+
+    .Container p{
+        font-size: 0.55rem;
+    }
+
+    .Container h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .form{
+        padding: 2.5vh 5vw;
+    }
+
+    .form h1{
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .form p{
+        text-align: center;
+    }
+
+    .form button{
+        padding: 1.2vh 1rem;
+    }
+
+    .form .note{
+        font-size: 0.45rem;
+    }
+
+    .right-side{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right-side .card,
+    .right-side .card2{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .card2{
+        padding: 1rem 0 1.5rem 1.5rem;
+    }
+
+    .social-links{
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px){
+    .Container h1{
+        font-size: 1.8rem;
+    }
+
+    .form-field input,
+    .form-field textarea{
+        font-size: 0.9rem;
+    }
+
+    .card h3{
+        font-size: 1.1rem;
+    }
+
+    .card p{
+        font-size: 0.85rem;
+    }
+
+    .card2 h3{
+        font-size: 1.2rem;
+    }
+
+    .social-links a{
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 1.4rem;
+    }
+}
